@@ -245,31 +245,24 @@ namespace Aquarium
         public string Name { get; private set; }
         public int Health { get; private set; }
         public Color Color { get; private set; }
-        public bool IsAlive { get; private set; }
+        public bool IsAlive => Health > 0;
 
         public Fish(string name, int health, Color color)
         {
             Name = name;
             Health = health;
             Color = color;
-            IsAlive = true;
         }
 
         public void SkipYear()
         {
             --Health;
 
-            if (Health == 0)
+            if (IsAlive == false)
             {
-                Die();
+                Console.WriteLine("Умерла рыбка:");
+                ShowInfo();
             }
-        }
-
-        private void Die()
-        {
-            Console.WriteLine("Умерла рыбка:");
-            ShowInfo();
-            IsAlive = false;
         }
 
         public void ShowInfo()
