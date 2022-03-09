@@ -245,7 +245,6 @@ namespace Aquarium
         public string Name { get; private set; }
         public int Health { get; private set; }
         public Color Color { get; private set; }
-
         public bool IsAlive { get; private set; }
 
         public Fish(string name, int health, Color color)
